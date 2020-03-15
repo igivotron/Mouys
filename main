@@ -1,0 +1,145 @@
+import discord
+import random
+
+
+########################################
+
+############################################################
+
+class Bot(discord.Client):
+
+    def __init__(self):
+        super().__init__()
+
+    async def on_ready(self):
+        print('Logged in as')
+        print(self.user.name)
+        print(self.user.id)
+        print('------')
+
+
+    async def on_message(self, message):
+        if(message.author == self.user):
+            return
+
+        if (message.content == ("ping")):
+            await message.channel.send("pong")
+            print ("user : ping")
+            print ("bot : pong")
+            print ("----------")
+
+        if (message.content == ("pong")):
+            await message.channel.send("ping")
+            print ("user : pong")
+            print ("bot : ping")
+            print ("----------")
+
+        if (message.content == ("random")):
+            a = random.randint(1,6)
+            await message.channel.send(a)
+            print ("random " + str(a))
+            print ("----------")
+
+        if (message.content == ("Salut")):
+            await message.channel.send("Salut ça va ?")
+
+        
+        if (message.content == ("Bonjour")):
+            await message.channel.send("Bonjour")
+
+        if (message.content == ("bonjour")):
+            await message.channel.send("Bonjour")
+
+
+        
+        if (message.content == ("salut")):
+            await message.channel.send("Salut ça va ?")
+            
+
+        if (message.content.startswith(".")):
+            b = message.content
+            await message.channel.send(b)
+            await message.delete(delay=None)
+
+    def commencer():
+    i = 0
+    m = 0
+    n = 0
+    o = 0
+    p = 0
+    q = 0
+    r = 0
+    s = 0
+    t = 0
+    u = 0
+    v = 0
+    w = 0
+    x = 0
+    while i < 1000:
+        a = random.randint(1,6)
+        b = random.randint(1,6)
+        c = a + b
+        print (c)
+        i+=1
+        if c == 1:
+            m+=1
+        if c == 2:
+            n+=1
+        if c == 3:
+            o+=1
+        if c == 4:
+            p+=1
+        if c ==5:
+            q+=1
+        if c == 6:
+            r+=1
+        if c == 7:
+            s+=1
+        if c == 8:
+            t+=1
+        if c == 9:
+            u+=1
+        if c == 10:
+            v+=1
+        if c == 11:
+            w+=1
+        if c == 12:
+            x+=1
+
+    await message.channel.send("1 =", m)
+    await message.channel.send("2 =", n)
+    await message.channel.send("3 =", o)
+    await message.channel.send("4 =", p)
+    await message.channel.send("5 =", q)
+    await message.channel.send("6 =", r)
+    await message.channel.send("7 =", s)
+    await message.channel.send("8 =", t)
+    await message.channel.send("9 =", u)
+    await message.channel.send("10 =", v)
+    await message.channel.send("11 =", w)
+    await message.channel.send("12 =", x)
+        if (message.content == ("dés")):
+            commencer()
+            
+
+
+        
+
+         
+
+
+
+        
+
+        
+        
+    
+
+
+        
+
+
+if __name__ == "__main__":
+
+    bot = Bot()
+    bot.run("Njg4MDM4Njg4MDg0ODUyNzQw.Xm3mkA.6iBHpqzpgKEGHd3OeA4l2Fxqosg")
